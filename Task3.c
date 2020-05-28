@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 int func(int** arr, int* n, int* len_arr);
-void Autotest(void);
 
 int func(int** arr, int* n, int* len_arr){
 int summ=0, count=0, flag=0,s=0, average=0;
@@ -60,35 +59,6 @@ else{
     free(temp_arr);
     return 0;
 }
-}
-
-void Autotest(void){
-int **testarr;
-int *lenarr;
-int  n= 3, m= 3;
-testarr = (int**)malloc(3*sizeof(int*));
-for (int k=0; k < 3; k++){
-testarr[k] = (int*)malloc(3*sizeof(int));
-for (int g=0; g < 3; g++){
-     testarr[k][g] = 1;
-}
-}
-lenarr = (int*)malloc(3*sizeof(int));
-for (int j = 0; j < 3; j++){
-    lenarr[j] = 3;
-}
-func(testarr, &n, lenarr);
-if ((testarr[0][0] == 1)&&(testarr[1][0] == 1)){
-    printf("Автотест сдан\n");
-}
-else{
-    printf("Автотест провален\n");
-    }
-for(int p=0; p < 2; p++){
-        free(testarr[p]);
-    }
-free(testarr);
-free(lenarr);
 }
 
 
@@ -163,6 +133,5 @@ for(int i=0; i<n; i++){
 free(arr);
 fclose(input);
 fclose(output);
-Autotest();
 return 0;
 }
